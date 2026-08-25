@@ -1,0 +1,39 @@
+version: "3.9"
+
+services:
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - PYTHONUNBUFFERED=1
+    command: uvicorn api.main:app --host 0.0.0.0 --port 8000 --reload
+    volumes:
+      - .:/app
+    working_dir: /app
+
+  # Optional: Kafka for production-grade streaming
+  # zookeeper:
+  #   image: confluentinc/cp-zookeeper:7.6.0
+  #   environment:
+  #     ZOOKEEPER_CLIENT_PORT: 2181
+
+  # kafka:
+  #   image: confluentinc/cp-kafka:7.6.0
+  #   ports: ["9092:9092"]
+  #   depends_on: [zookeeper]
+  #   environment:
+  #     KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+  #     KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:9092
+
+  # Optional: Redis feature store
+  # redis:
+  #   image: redis:7-alpine
+  #   ports: ["6379:6379"]
+
+  # Optional: Neo4j graph database
+  # neo4j:
+  #   image: neo4j:5.20
+  #   ports: ["7474:7474", "7687:7687"]
+  #   environment:
+  #     NEO4J_AUTH: neo4j/password123
