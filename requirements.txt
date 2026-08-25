@@ -1,0 +1,41 @@
+# Core
+fastapi==0.111.0
+uvicorn[standard]==0.29.0
+pydantic==2.7.1
+python-dotenv==1.0.1
+
+# Data / ML
+numpy==1.26.4
+pandas==2.2.2
+scikit-learn==1.4.2
+xgboost==2.0.3
+shap==0.45.1
+
+# Graph
+networkx==3.3
+
+# Statistics / Drift
+scipy==1.13.0
+
+# Database
+sqlalchemy==2.0.30
+psycopg2-binary==2.9.9
+
+# Feature store (optional Redis)
+redis==5.0.4
+
+# Experiment tracking
+mlflow==2.13.0
+
+# Streaming (optional Kafka)
+confluent-kafka==2.4.0
+
+# Utilities
+httpx==0.27.0
+loguru==0.7.2
+rich==13.7.1
+
+# Testing
+pytest==8.2.0
+pytest-asyncio==0.23.6
+httpx==0.27.0
